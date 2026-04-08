@@ -7,8 +7,6 @@ import {
   Output,
   EventEmitter,
   Input,
-  NgZone,
-  DOCUMENT,
   inject,
 } from '@angular/core';
 

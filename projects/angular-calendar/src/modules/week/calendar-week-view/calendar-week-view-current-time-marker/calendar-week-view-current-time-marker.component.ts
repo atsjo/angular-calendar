@@ -1,14 +1,15 @@
 import {
+  afterNextRender,
   Component,
+  inject,
+  Injector,
   Input,
-  NgZone,
   OnChanges,
   SimpleChanges,
   TemplateRef,
-  inject,
 } from '@angular/core';
 import { BehaviorSubject, interval, Observable } from 'rxjs';
-import { startWith, map, switchMap } from 'rxjs/operators';
+import { map, switchMap, startWith } from 'rxjs/operators';
 import { DateAdapter } from '../../../../date-adapters/date-adapter';
 import { NgTemplateOutlet, AsyncPipe } from '@angular/common';
 
@@ -67,12 +68,23 @@ export class CalendarWeekViewCurrentTimeMarkerComponent implements OnChanges {
 
   private dateAdapter = inject(DateAdapter);
 
-  private zone = inject(NgZone);
+  private injector = inject(Injector);
+
+  private afterNextRender$ = new Observable<void>((subscriber) => {
+    const ref = afterNextRender(
+      () => {
+        subscriber.next();
+        subscriber.complete();
+      },
+      { injector: this.injector },
+    );
+    return () => ref.destroy();
+  });
 
   marker$: Observable<{
     isVisible: boolean;
     top: number;
-  }> = this.zone.onStable.pipe(
+  }> = this.afterNextRender$.pipe(
     switchMap(() => interval(60 * 1000)),
     startWith(0),
     switchMap(() => this.columnDate$),

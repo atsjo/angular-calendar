@@ -3394,6 +3394,7 @@ describe('calendarWeekView component', () => {
         hourSegmentHeight: {},
       });
       fixture.detectChanges();
+      fixture.detectChanges();
       const marker = fixture.nativeElement.querySelector(
         '.cal-day-columns .cal-day-column:nth-child(2) .cal-current-time-marker',
       );
@@ -3411,6 +3412,7 @@ describe('calendarWeekView component', () => {
         hourSegmentHeight: {},
       });
       fixture.detectChanges();
+      fixture.detectChanges();
       const marker = fixture.nativeElement.querySelector(
         '.cal-day-columns .cal-day-column:nth-child(2) .cal-current-time-marker',
       );
@@ -3426,6 +3428,7 @@ describe('calendarWeekView component', () => {
         viewDate: {},
         hourSegmentHeight: {},
       });
+      fixture.detectChanges();
       fixture.detectChanges();
       const marker = fixture.nativeElement.querySelector(
         '.cal-day-columns .cal-day-column:nth-child(2) .cal-current-time-marker',
@@ -3443,6 +3446,7 @@ describe('calendarWeekView component', () => {
         viewDate: {},
         hourSegmentHeight: {},
       });
+      fixture.detectChanges();
       fixture.detectChanges();
       const marker = fixture.nativeElement.querySelector(
         '.cal-day-columns .cal-day-column:nth-child(2) .cal-current-time-marker',
