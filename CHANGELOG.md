@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.32.2](https://github.com/mattlewis92/angular-calendar/compare/v0.32.1...v0.32.2) (2026-04-08)
+
+
+### Bug Fixes
+
+* make current time marker update in zoneless mode ([2986aee](https://github.com/mattlewis92/angular-calendar/commit/2986aee1e71b6cf81ba7d6ba4ce0a7b8b74424a9))
+
 ### [0.32.1](https://github.com/mattlewis92/angular-calendar/compare/v0.32.0...v0.32.1) (2026-03-19)
 
 
